@@ -18,7 +18,7 @@ public class Person {
 	}
 
 	// 매개변수 생성자
-	public Person(String name, String address, int age) {
+	public Person(String name, int age, String address ) {
 		super();
 		this.name = name;
 		this.address = address;
