@@ -31,7 +31,6 @@ public class SelectDepartmentServlet extends HttpServlet{
 			String department = req.getParameter("department");
 			List<Student> departList = service.selectDepartment(department);
 
-
 			req.setAttribute("department", department);
 			req.setAttribute("departList", departList);
 			

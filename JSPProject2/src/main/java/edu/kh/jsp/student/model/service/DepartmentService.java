@@ -23,9 +23,6 @@ public class DepartmentService {
 		
 		close(conn);
 		
-		
-		
-		
 		return departList;
 		
 	}

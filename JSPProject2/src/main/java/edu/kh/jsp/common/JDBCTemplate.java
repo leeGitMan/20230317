@@ -32,12 +32,10 @@ public class JDBCTemplate {
 	 * @return conn
 	 */
 	public static Connection getConnection() {
-		
 		try {
 			
 			// 현재 커넥션 객체가 없을 경우 -> 새 커넥션 객체를 생성하는 것
 			if(conn == null || conn.isClosed()) {
-				
 				
 				Properties prop = new Properties();
 				// Map<String, String> 형태의 객체, XML 입출력에 특화
@@ -54,7 +52,6 @@ public class JDBCTemplate {
 				String password = prop.getProperty("password");
 				
 				// 커넥션 생성
-				
 				Class.forName(driver);
 				
 				// DriverManager를 이용해 Connection 객체 생성
@@ -68,7 +65,6 @@ public class JDBCTemplate {
 			System.out.println("[Connection 생성 중 예외 발생]");
 			e.printStackTrace();
 		}
-		
 		return conn;
 	}
 	
