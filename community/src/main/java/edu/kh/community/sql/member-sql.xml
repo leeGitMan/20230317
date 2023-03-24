@@ -10,7 +10,27 @@
 		TO_CHAR(ENROLL_DT, 'YYYY"년" MM"월" DD"일"') AS ENROLL_DATE
 		FROM MEMBER
 		WHERE MEMBER_EMAIL = ? AND SECESSION_FL = 'N'
+	</entry>
 	
+	
+	
+	<!--  인증번호 수정 -->
+	
+	<entry key="updateCertification">
+	
+		UPDATE CERTIFICATION SET
+		C_NUMBER = ?, 
+		ISSUE_DT = SYSDATE
+		WHERE EMAIL = ?
+		
+	</entry>
+	
+	
+	
+	<!--  인증번호 생성  -->
+	<entry key="insertCertification">
+	
+		INSERT INTO CERTIFICATION VALUES(?,?,SYSDATE)
 	
 	</entry>
 	

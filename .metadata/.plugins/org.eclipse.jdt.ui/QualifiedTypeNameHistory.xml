@@ -13,4 +13,5 @@
     <fullyQualifiedTypeName name="edu.kh.community.common.JDBCTemplate"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
+    <fullyQualifiedTypeName name="javax.servlet.Filter"/>
 </qualifiedTypeNameHistroy>

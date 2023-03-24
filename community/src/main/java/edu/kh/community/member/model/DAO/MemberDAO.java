@@ -70,4 +70,112 @@ public class MemberDAO {
 		}
 		return member;
 	}
+
+	/** 인증번호, 발급일 수정 DAO
+	 * @param conn
+	 * @param inputEmail
+	 * @param cNumber
+	 * @return
+	 * @throws Exception
+	 */
+	public int updateCertification(Connection conn, String inputEmail, String cNumber) throws Exception {
+		
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateCertification");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, cNumber);
+			pstmt.setString(2, inputEmail);
+			
+			result = pstmt.executeUpdate();
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 인증번호 생성 DAO
+	 * @param conn
+	 * @param inputEmail
+	 * @param cNumber
+	 * @return
+	 */
+	public int insertCertification(Connection conn, String inputEmail, String cNumber) throws Exception {
+
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertCertification");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, inputEmail);
+			pstmt.setString(2, cNumber);
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
+	
+
+	public String checkNumber(Connection conn, String inputEmail) throws Exception{
+		
+		String checkNumber = null;
+		
+		
+		try {
+			
+			String sql = prop.getProperty("selectCheckNumber");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, inputEmail);
+			
+			rs = pstmt.executeQuery();
+			
+			
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			
+		}
+		
+		
+		
+		return checkNumber;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
